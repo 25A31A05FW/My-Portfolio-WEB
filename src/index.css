@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-deep-space: #0B132B;
+    --accent-mint: #80FFDB;
+    --card-slate: #1C2541;
+    --text-frost: #F1FAF9;
+    --text-secondary: #B8C7D9;
+    --border-subtle: #344563;
+  }
+
+  body {
+    font-family: 'Poppins', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #0B132B;
+    color: #F1FAF9;
+    overflow-x: hidden;
+  }
+
+  /* Custom scrollbar matching Mint Ice / Deep Space theme */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0B132B;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #80FFDB;
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #5EEAD4;
+  }
+}
+
+.font-signature {
+  font-family: 'Caveat', cursive;
+}
+
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
