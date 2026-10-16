@@ -1,79 +1,85 @@
 import React from 'react';
+import { Award, GitBranch, Terminal, Shield, CheckCircle2, Cpu } from 'lucide-react';
 
 export const ExperienceIllustration: React.FC<{ className?: string }> = ({ className = 'w-full h-auto max-w-md' }) => {
   return (
-    <div className={`relative flex items-center justify-center p-4 ${className}`}>
-      <div className="absolute w-64 h-64 rounded-full bg-[#80FFDB]/15 blur-3xl -z-10 animate-pulse pointer-events-none" />
+    <div className={`relative ${className}`}>
+      {/* Subtle Glow */}
+      <div className="absolute -inset-1 rounded-3xl bg-gradient-to-br from-[#80FFDB]/15 to-transparent blur-xl -z-10" />
 
-      <svg
-        viewBox="0 0 460 380"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="w-full h-auto drop-shadow-2xl"
-      >
-        {/* Frame container */}
-        <rect x="20" y="20" width="420" height="340" rx="28" fill="#1C2541" stroke="#344563" strokeWidth="2" />
-        
-        {/* Top header bar */}
-        <rect x="20" y="20" width="420" height="45" rx="28" fill="#0B132B" />
-        <rect x="20" y="45" width="420" height="20" fill="#0B132B" />
-        <circle cx="45" cy="42" r="5" fill="#80FFDB" />
-        <circle cx="60" cy="42" r="5" fill="#344563" />
-        <circle cx="75" cy="42" r="5" fill="#5EEAD4" />
-        <text x="230" y="47" fill="#B8C7D9" fontSize="12" textAnchor="middle" fontFamily="monospace">
-          hackathon-pipeline: verimedia-ai
-        </text>
+      {/* Structured Engineering Track & Hackathon Milestone Card */}
+      <div className="rounded-2xl bg-[#1C2541] border border-[#344563] shadow-2xl p-6 space-y-5 font-mono text-xs">
+        {/* Header */}
+        <div className="flex items-center justify-between pb-4 border-b border-[#344563]">
+          <div className="flex items-center gap-2.5">
+            <div className="w-9 h-9 rounded-xl bg-[#0B132B] border border-[#80FFDB] flex items-center justify-center text-[#80FFDB]">
+              <Award className="w-5 h-5" />
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-[#F1FAF9] font-sans">Engineering Milestones</h4>
+              <p className="text-[11px] text-[#B8C7D9]">Hackathon &amp; Software Projects</p>
+            </div>
+          </div>
+          <span className="px-2 py-0.5 rounded bg-[#0B132B] border border-[#80FFDB]/40 text-[10px] text-[#80FFDB] font-bold">
+            2025–2026
+          </span>
+        </div>
 
-        {/* Server & Pipeline Stack */}
-        <g transform="translate(50, 85)">
-          {/* Server Unit 1 - VERIMEDIA */}
-          <rect x="0" y="0" width="360" height="52" rx="10" fill="#0B132B" stroke="#80FFDB" strokeWidth="1.5" />
-          <circle cx="25" cy="26" r="6" fill="#80FFDB" />
-          <line x1="45" y1="20" x2="160" y2="20" stroke="#F1FAF9" strokeWidth="3" strokeLinecap="round" />
-          <line x1="45" y1="32" x2="110" y2="32" stroke="#80FFDB" strokeWidth="3" strokeLinecap="round" />
-          <rect x="230" y="14" width="115" height="24" rx="6" fill="#1C2541" stroke="#80FFDB" strokeWidth="1" />
-          <text x="287" y="30" fill="#80FFDB" fontSize="10" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
-            VERIMEDIA AI
-          </text>
+        {/* Milestone 1: IBM SkillsBuild Regional Hackathon Finalist */}
+        <div className="p-4 rounded-xl bg-[#0B132B] border border-[#80FFDB]/40 space-y-2">
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-bold text-[#80FFDB] flex items-center gap-1.5">
+              <Shield className="w-3.5 h-3.5 text-[#80FFDB]" />
+              SkillUp Hackathon 2026 Finale
+            </span>
+            <span className="text-[10px] px-2 py-0.5 rounded bg-[#1C2541] text-[#80FFDB] border border-[#344563]">
+              Regional Finalist
+            </span>
+          </div>
+          <p className="text-[11px] text-[#B8C7D9] font-sans">
+            Collaborated in Team VERIMEDIA AI targeting media manipulation forensics (image, video, audio).
+          </p>
+          <div className="flex flex-wrap gap-1.5 pt-1">
+            {['React', 'TypeScript', 'Express', 'SQLite'].map((tag) => (
+              <span key={tag} className="px-2 py-0.5 rounded bg-[#1C2541] text-[10px] text-[#F1FAF9]">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
 
-          {/* Connection Lines */}
-          <line x1="180" y1="52" x2="180" y2="75" stroke="#80FFDB" strokeWidth="2" strokeDasharray="4 4" />
+        {/* Milestone 2: C++ Student Grade Sheet Management System */}
+        <div className="p-4 rounded-xl bg-[#0B132B] border border-[#344563] space-y-2">
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-bold text-[#F1FAF9] flex items-center gap-1.5">
+              <Terminal className="w-3.5 h-3.5 text-[#80FFDB]" />
+              Student Management System
+            </span>
+            <span className="text-[10px] px-2 py-0.5 rounded bg-[#1C2541] text-emerald-400 border border-[#344563]">
+              Completed
+            </span>
+          </div>
+          <p className="text-[11px] text-[#B8C7D9] font-sans">
+            Centralized C++ record management application for attendance, examinations, and grade sheets.
+          </p>
+          <div className="flex flex-wrap gap-1.5 pt-1">
+            {['C++', 'Data Structures', 'File I/O', 'CLI'].map((tag) => (
+              <span key={tag} className="px-2 py-0.5 rounded bg-[#1C2541] text-[10px] text-[#F1FAF9]">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
 
-          {/* Server Unit 2 - IBM SkillsBuild Hackathon */}
-          <rect x="0" y="75" width="360" height="52" rx="10" fill="#1C2541" stroke="#344563" strokeWidth="1.5" />
-          <circle cx="25" cy="101" r="6" fill="#F1FAF9" />
-          <line x1="45" y1="95" x2="200" y2="95" stroke="#F1FAF9" strokeWidth="3" strokeLinecap="round" />
-          <line x1="45" y1="107" x2="140" y2="107" stroke="#80FFDB" strokeWidth="3" strokeLinecap="round" />
-          <rect x="230" y="89" width="115" height="24" rx="6" fill="#0B132B" />
-          <text x="287" y="105" fill="#80FFDB" fontSize="10" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
-            REGIONAL FINALIST
-          </text>
-
-          {/* Connection Lines */}
-          <line x1="180" y1="127" x2="180" y2="150" stroke="#80FFDB" strokeWidth="2" strokeDasharray="4 4" />
-
-          {/* Server Unit 3 - C++ Student Management System */}
-          <rect x="0" y="150" width="360" height="52" rx="10" fill="#0B132B" stroke="#344563" strokeWidth="1.5" />
-          <circle cx="25" cy="176" r="6" fill="#80FFDB" />
-          <line x1="45" y1="170" x2="170" y2="170" stroke="#B8C7D9" strokeWidth="3" strokeLinecap="round" />
-          <line x1="45" y1="182" x2="120" y2="182" stroke="#80FFDB" strokeWidth="3" strokeLinecap="round" />
-          <rect x="230" y="164" width="115" height="24" rx="6" fill="#1C2541" />
-          <text x="287" y="180" fill="#F1FAF9" fontSize="10" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
-            C++ MANAGEMENT
-          </text>
-        </g>
-
-        {/* Lower Metric bar */}
-        <g transform="translate(50, 310)">
-          <rect width="360" height="34" rx="8" fill="#0B132B" stroke="#344563" strokeWidth="1" />
-          <text x="20" y="22" fill="#80FFDB" fontSize="11" fontFamily="monospace">
-            &gt; IBM SkillsBuild &amp; Pragati Univ
-          </text>
-          <text x="340" y="22" fill="#F1FAF9" fontSize="11" textAnchor="end" fontFamily="monospace">
-            8.74 CGPA
-          </text>
-        </g>
-      </svg>
+        {/* Footer audit indicator */}
+        <div className="pt-2 border-t border-[#344563] flex items-center justify-between text-[11px] text-[#B8C7D9]">
+          <span className="flex items-center gap-1.5 text-[#80FFDB]">
+            <CheckCircle2 className="w-3.5 h-3.5" />
+            <span>Active CSE Undergraduate Lab Practice</span>
+          </span>
+          <span>Pragati Univ</span>
+        </div>
+      </div>
     </div>
   );
 };

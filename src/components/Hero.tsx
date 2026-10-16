@@ -59,18 +59,20 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                 className="w-full h-full object-cover"
               />
             ) : (
-              <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-[#1C2541] to-[#0B132B] text-[#F1FAF9] p-4 text-center">
-                <div className="w-16 h-16 rounded-full bg-[#80FFDB] flex items-center justify-center text-[#0B132B] font-black text-2xl shadow-lg">
-                  NS
-                </div>
-                <span className="text-xs font-semibold text-[#F1FAF9] mt-2">Neelapala Satya Sudheer</span>
-                <span className="text-[10px] text-[#80FFDB] font-mono">Profile Photo Placeholder</span>
+              <div className="relative w-full h-full flex flex-col items-center justify-center bg-gradient-to-b from-[#1C2541] via-[#151D38] to-[#0B132B] p-4 text-center select-none">
+                {/* Professional Developer Silhouette */}
+                <svg viewBox="0 0 100 100" className="w-24 h-24 text-[#80FFDB] opacity-90 drop-shadow-md" fill="currentColor">
+                  <circle cx="50" cy="35" r="18" fill="currentColor" opacity="0.9" />
+                  <path d="M18 84C18 66 32 58 50 58C68 58 82 66 82 84V88H18V84Z" fill="currentColor" opacity="0.8" />
+                </svg>
+                <span className="text-xs font-bold text-[#F1FAF9] tracking-wide mt-1">N. Satya Sudheer</span>
+                <span className="text-[10px] text-[#80FFDB] font-mono">Pragati University CSE</span>
               </div>
             )}
             {/* Upload trigger overlay */}
             <label className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-[#F1FAF9] cursor-pointer transition-opacity text-xs font-medium">
               <Camera className="w-6 h-6 mb-1 text-[#80FFDB]" />
-              <span>Upload Photo</span>
+              <span>Change Photo</span>
               <input type="file" accept="image/*" className="hidden" onChange={handleImageUpload} />
             </label>
           </div>
@@ -139,7 +141,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
         transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
         className="hidden lg:flex absolute left-[35%] top-1/2 -translate-x-1/2 -translate-y-1/2 z-30"
       >
-        <div className="relative group w-64 h-64 xl:w-72 xl:h-72 rounded-full border-4 border-[#80FFDB] shadow-[0_20px_50px_rgba(0,0,0,0.8)] bg-[#0B132B] overflow-hidden flex items-center justify-center">
+        <div className="relative group w-64 h-64 xl:w-72 xl:h-72 rounded-full border-4 border-[#80FFDB] shadow-[0_20px_50px_rgba(0,0,0,0.85)] bg-[#0B132B] overflow-hidden flex items-center justify-center">
           {profileImage ? (
             <img
               src={profileImage}
@@ -147,18 +149,24 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
               className="w-full h-full object-cover"
             />
           ) : (
-            <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-[#1C2541] via-[#101935] to-[#0B132B] p-6 text-center select-none">
-              <div className="w-24 h-24 rounded-full bg-[#80FFDB] flex items-center justify-center text-[#0B132B] font-black text-4xl shadow-xl ring-4 ring-[#80FFDB]/30">
-                NS
+            <div className="relative w-full h-full flex flex-col items-center justify-center bg-gradient-to-b from-[#1C2541] via-[#121B35] to-[#0B132B] p-6 text-center select-none">
+              {/* Studio Silhouette */}
+              <div className="relative mb-2">
+                <div className="w-32 h-32 rounded-full bg-gradient-to-tr from-[#0B132B] to-[#1C2541] border border-[#344563] flex items-center justify-center overflow-hidden shadow-inner">
+                  <svg viewBox="0 0 100 100" className="w-28 h-28 text-[#80FFDB]/80 pt-2" fill="currentColor">
+                    <circle cx="50" cy="36" r="19" />
+                    <path d="M16 88C16 68 31 59 50 59C69 59 84 68 84 88V92H16V88Z" />
+                  </svg>
+                </div>
+                <div className="absolute bottom-0 right-1 w-6 h-6 rounded-full bg-[#80FFDB] flex items-center justify-center text-[#0B132B] shadow-md border-2 border-[#0B132B]">
+                  <Camera className="w-3 h-3" />
+                </div>
               </div>
-              <span className="text-sm font-bold text-[#F1FAF9] mt-3 tracking-wide">
+              <span className="text-sm font-bold text-[#F1FAF9] tracking-wide">
                 Neelapala Satya Sudheer
               </span>
               <span className="text-[11px] text-[#80FFDB] font-mono mt-0.5 font-semibold">
-                Pragati University CSE &apos;29 • 8.74 CGPA
-              </span>
-              <span className="text-[10px] text-[#B8C7D9] mt-1 font-mono">
-                Click to upload profile photo
+                Pragati University CSE • 8.74 CGPA
               </span>
             </div>
           )}
@@ -166,8 +174,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
           {/* Hover overlay to upload own picture */}
           <label className="absolute inset-0 bg-black/75 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-[#F1FAF9] cursor-pointer transition-opacity duration-200 text-xs font-semibold p-4 text-center">
             <Camera className="w-8 h-8 mb-2 text-[#80FFDB]" />
-            <span>Click to upload your photo</span>
-            <span className="text-[10px] text-[#B8C7D9] mt-1">PNG, JPG, or WEBP</span>
+            <span>Upload Real Photograph</span>
+            <span className="text-[10px] text-[#B8C7D9] mt-1">Click to select photo</span>
             <input type="file" accept="image/*" className="hidden" onChange={handleImageUpload} />
           </label>
         </div>
